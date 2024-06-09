@@ -1,0 +1,131 @@
+spring:
+  application:
+    name: cuecolab-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+
+#    //secret
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: pranshubarar1851996@gmail.com
+
+#    //secret
+    password: ${SPRING_MAIL_PASSWORD}
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        from: ${SPRING_MAIL_PROPERTIES_MAIL_FROM}
+        mime:
+          charset: UTF
+    default-encoding: UTF-8
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}
+
+            #    //secret
+            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}
+
+            redirect-uri: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_REDIRECT_URI}
+            scope: openid profile email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://www.googleapis.com/oauth2/v3/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+            issuer-uri: https://accounts.google.com
+jwt:
+  #    //secret
+  secret: ${JWT_SECRET}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+logging:
+  level:
+    root: ${LOGGING_LEVEL}
+
+CLOUDFRONT_DOMAIN_NAME: ${CLOUDFRONT_DOMAIN_NAME}
+CLOUDFRONT_DOMAIN_NAME_FOR_RAW_VIDEO: ${CLOUDFRONT_DOMAIN_NAME_FOR_RAW_VIDEO}
+CLOUDFRONT_KEY_PAIR_ID: ${CLOUDFRONT_KEY_PAIR_ID}
+RAW_VIDEOS_BUCKET_NAME: ${RAW_VIDEOS_BUCKET_NAME}
+
+#    //secret
+SECRET_KEY_FOR_CLOUDFRONT_PRIVATE_KEY: ${SECRET_KEY_FOR_CLOUDFRONT_PRIVATE_KEY}
+SECRETS_MANAGER_SECRET_NAME: ${SECRETS_MANAGER_SECRET_NAME}
+
+youtube-client-id: ${YOUTUBE_CLIENT_ID}
+
+#    //secret
+youtube-client-secret: ${YOUTUBE_CLIENT_SECRET}
+youtube-scope: https://www.googleapis.com/auth/youtube.upload
+video-upload-message-request-queue-url: ${VIDEO_UPLOAD_MESSAGE_REQUEST_QUEUE_URL}
+video-upload-message-response-queue-url: ${VIDEO_UPLOAD_MESSAGE_RESPONSE_QUEUE_URL}
+
+youtube-redirect-uri: https://api.cuecolab.com/youtube/oauth2callback
+
+#    //secret
+state-csrf-encryption-secret-key: ${STATE_CSRF_ENCRYPTION_SECRET_KEY}
+
+server:
+  forward-headers-strategy: framework
+  servlet:
+    session:
+      persistent: false
+      timeout: 0
+
+
+
+
+
+
+resilience4j.ratelimiter:
+  instances:
+    getAllRooms_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    getRoom_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    createRoom_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    deleteRoom_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    addRoomParticipant_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    deleteRoomParticipant_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+    getAllRoomsUserIsInvitedTo_RateLimiter:
+      limitForPeriod: 10
+      limitRefreshPeriod: 20s
+      timeoutDuration: 20s
+

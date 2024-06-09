@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+    <div style="display: flex-col; justify-content: center; align-items: center; background-color: #1e3a8a; text-align: center; padding: 20px; margin: 5px;">
+        <div style="color: white; font-size: 25px; margin-right: 10px;">
+            Welcome to
+        </div>
+        <div style="text-align: center;">
+<!--            <img src="cid:logo" style="vertical-align: middle; margin-right: 10px;" alt="Logo" />-->
+            <h2 style="color: white; font-size: 55px">
+                CueCoLab
+            </h2>
+        </div>
+        <div style="color: white; font-size: 25px; padding: 20px; margin: 5px;" th:utext="${content}">
+        </div>
+    </div>
+    <div style="text-align: center; font-size: 12px;">
+        Copyright ⓒ 2024 cuecolab.com. All Rights Reserved.
+    </div>
+    </body>
+    </html>
+
+
+
+
+
