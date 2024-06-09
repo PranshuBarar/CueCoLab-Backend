@@ -32,6 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-src/main/java/com/cuecolab/cuecolab/backend/securityConfig
-src/main/java/com/cuecolab/cuecolab/backend/aws
+/src/main/java/com/cuecolab/cuecolab/backend/securityConfig
+/src/main/java/com/cuecolab/cuecolab/backend/aws
 
