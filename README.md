@@ -1,5 +1,7 @@
 # CueCoLab
 
+(This is Backend CodeBase of CueCoLab, for Frontend CodeBase refer this: [CueCoLab-Frontend](https://github.com/PranshuBarar/CueCoLab-Frontend))
+
 Welcome to [CueCoLab](http://cuecolab.com), a platform designed to streamline collaboration between content creators and their editors by providing a shared workspace where efficiency, security, and convenience are the cornerstones.
 
 ![Screenshot from 2024-06-12 18-10-17](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/33a42d74-9df0-4399-b280-8d760b36fbd0)
