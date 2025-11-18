@@ -75,6 +75,17 @@ if [ -z "$JAVA_HOME" ] ; then
   fi
 fi
 
+# CueCoLab local development default: fall back to Ubuntu's OpenJDK 17 if available
+if [ -z "$JAVA_HOME" ] ; then
+  if [ -x "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" ] ; then
+    JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+    export JAVA_HOME
+  elif [ -x "/usr/lib/jvm/java-17-openjdk/bin/java" ] ; then
+    JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+    export JAVA_HOME
+  fi
+fi
+
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin ; then
   [ -n "$JAVA_HOME" ] &&
