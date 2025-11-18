@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:cuecolab-test;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    root: WARN
+
+CLOUDFRONT_DOMAIN_NAME: https://cloudfront.example.com
+CLOUDFRONT_DOMAIN_NAME_FOR_RAW_VIDEO: https://cloudfront-raw.example.com
+CLOUDFRONT_KEY_PAIR_ID: test-key-pair
+RAW_VIDEOS_BUCKET_NAME: cuecolab-test-bucket
+SECRET_KEY_FOR_CLOUDFRONT_PRIVATE_KEY: test-secret
+SECRETS_MANAGER_SECRET_NAME: test-secrets
+youtube-client-id: test-youtube-client
+youtube-client-secret: test-youtube-secret
+youtube-scope: https://www.googleapis.com/auth/youtube.upload
+video-upload-message-request-queue-url: https://sqs.fake/request
+video-upload-message-response-queue-url: https://sqs.fake/response
+youtube-redirect-uri: https://localhost/callback
+state-csrf-encryption-secret-key: test-state-secret
+
