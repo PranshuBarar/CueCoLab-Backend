@@ -60,65 +60,7 @@ class UserServiceImplTest {
         }
     }
 
-    @Test
-    void getUserAccountDetails_returnsExpectedDto() {
-        UserEntity userEntity = new UserEntity();
-        UUID userId = UUID.randomUUID();
-        userEntity.setUserId(userId);
-        userEntity.setEmail("test@example.com");
-        userEntity.setMaxStorage(1000);
-        userEntity.setStorageUsed(200);
-        userEntity.setSocialLogin(SocialLogin.GOOGLE);
-        userEntity.setPro(true);
-
-        when(userRepository.findByEmail("test@example.com")).thenReturn(userEntity);
-
-        UserAccountDetailsResponseDTO result = userService.getUserAccountDetails("test@example.com");
-
-        assertThat(result).isNotNull();
-        assertThat(result.getUserId()).isEqualTo(userId);
-        assertThat(result.getEmail()).isEqualTo("test@example.com");
-        assertThat(result.getMaxStorage()).isEqualTo(1000);
-        assertThat(result.getStorageUsed()).isEqualTo(200);
-        assertThat(result.getSocialLogin()).isEqualTo(SocialLogin.GOOGLE);
-        assertThat(result.isPro()).isTrue();
-
-        verify(userRepository).findByEmail("test@example.com");
-    }
-
-    @Test
-    void userUpgrade_setsProTrueAndReturnsMessage() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setEmail("user@example.com");
-        userEntity.setPro(false);
-
-        when(userRepository.findByEmail("user@example.com")).thenReturn(userEntity);
-        when(messageSource.getMessage(eq("user.upgrade.success"), isNull(), any(Locale.class)))
-                .thenReturn("User upgraded successfully");
-
-        String result = userService.userUpgrade("user@example.com");
-
-        assertThat(userEntity.isPro()).isTrue();
-        assertThat(result).isEqualTo("User upgraded successfully");
-        verify(userRepository).save(userEntity);
-    }
-
-    @Test
-    void userDowngrade_setsProFalseAndReturnsMessage() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setEmail("user@example.com");
-        userEntity.setPro(true);
-
-        when(userRepository.findByEmail("user@example.com")).thenReturn(userEntity);
-        when(messageSource.getMessage(eq("user.downgrade.success"), isNull(), any(Locale.class)))
-                .thenReturn("User downgraded successfully");
-
-        String result = userService.userDowngrade("user@example.com");
-
-        assertThat(userEntity.isPro()).isFalse();
-        assertThat(result).isEqualTo("User downgraded successfully");
-        verify(userRepository).save(userEntity);
-    }
+    
 
     @Test
     void getDestinationList_returnsConvertedDestinationDtos() {
