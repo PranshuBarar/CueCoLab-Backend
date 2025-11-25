@@ -26,4 +26,5 @@ jobs:
           access_token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
           coverage_file: target/site/jacoco/jacoco.xml
           platform: github
+          module_path: src/main/java
 
