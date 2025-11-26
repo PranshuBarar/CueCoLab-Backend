@@ -21,7 +21,7 @@ jobs:
         run: mvn -B clean test jacoco:report
 
       - name: Upload coverage to CodeAnt AI
-        uses: CodeAnt-AI/codeant-coverage-action@v0.0.1
+        uses: CodeAnt-AI/codeant-coverage-action@v0.0.4
         with:
           access_token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
           coverage_file: target/site/jacoco/jacoco.xml
