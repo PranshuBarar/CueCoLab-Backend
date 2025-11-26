@@ -28,4 +28,3 @@ jobs:
           platform: github
           module: backend
           module_path: src/main/java
-
