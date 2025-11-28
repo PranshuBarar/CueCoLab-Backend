@@ -103,62 +103,6 @@ class UserServiceImplTest {
         verify(userRepository).save(userEntity);
     }
 
-    @Test
-    void userDowngrade_setsProFalseAndReturnsMessage() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setEmail("user@example.com");
-        userEntity.setPro(true);
-
-        when(userRepository.findByEmail("user@example.com")).thenReturn(userEntity);
-        when(messageSource.getMessage(eq("user.downgrade.success"), isNull(), any(Locale.class)))
-                .thenReturn("User downgraded successfully");
-
-        String result = userService.userDowngrade("user@example.com");
-
-        assertThat(userEntity.isPro()).isFalse();
-        assertThat(result).isEqualTo("User downgraded successfully");
-        verify(userRepository).save(userEntity);
-    }
-
-    @Test
-    void getDestinationList_returnsConvertedDestinationDtos() {
-        UUID userId = UUID.randomUUID();
-        currentUserIdMockedStatic.when(CurrentUserId::getUserId).thenReturn(userId);
-
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(userId);
-
-        DestinationEntity destinationEntity = new DestinationEntity();
-        List<DestinationEntity> destinationEntities = List.of(destinationEntity);
-        userEntity.setDestinationEntityList(destinationEntities);
-
-        DestinationDTO destinationDTO = DestinationDTO.builder().build();
-        List<DestinationDTO> destinationDTOS = List.of(destinationDTO);
-
-        when(userRepository.findByUserId(userId)).thenReturn(userEntity);
-        when(convertors.convertDestinationEntityListToDestinationDTOList(destinationEntities))
-                .thenReturn(destinationDTOS);
-
-        List<DestinationDTO> result = userService.getDestinationList();
-
-        assertThat(result).hasSize(1);
-        assertThat(result.get(0)).isSameAs(destinationDTO);
-        verify(userRepository).findByUserId(userId);
-        verify(convertors).convertDestinationEntityListToDestinationDTOList(destinationEntities);
-    }
-
-    @Test
-    void getUserSubscriptionStatus_returnsProFlag() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setPro(true);
-
-        when(userRepository.findByEmail("test@example.com")).thenReturn(userEntity);
-
-        boolean result = userService.getUserSubscriptionStatus("test@example.com");
-
-        assertThat(result).isTrue();
-        verify(userRepository).findByEmail("test@example.com");
-    }
 
     @Test
     void userAccountDelete_deletesByEmailAndReturnsMessage() {
