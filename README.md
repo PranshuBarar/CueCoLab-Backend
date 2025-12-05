@@ -4,13 +4,17 @@
 
 Welcome to [CueCoLab](http://cuecolab.com), a platform designed to streamline collaboration between content creators and their editors by providing a shared workspace where efficiency, security, and convenience are the cornerstones.
 
+## 🎬 Live Demo
+
+<video src="https://github.com/PranshuBarar/CueCoLab-Frontend/releases/download/v1.0/cuecolab-demo.mp4" controls width="100%"></video>
+
 ![Screenshot from 2024-06-12 18-10-17](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/33a42d74-9df0-4399-b280-8d760b36fbd0)
 ![CueCoLab Interface](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/e5843a8d-ad69-419e-9e89-16fed44195c3)
 ![Screenshot from 2024-06-12 18-08-52](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/0ae13dfe-e231-4a6b-bac7-de2acd5d78fb)
-<!-- If you have an image, replace 'link_to_image_here' with the URL to the image. -->
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Live Demo](#-live-demo)
 - [Problems Faced by Content Creators](#problems-faced-by-content-creators)
 - [Solutions Provided by CueCoLab](#solutions-provided-by-cuecolab)
 - [Benefits of Using CueCoLab](#benefits-of-using-cuecolab)
