@@ -4,7 +4,7 @@
 
 Welcome to [CueCoLab](http://cuecolab.com), a platform designed to streamline collaboration between content creators and their editors by providing a shared workspace where efficiency, security, and convenience are the cornerstones.
 
-## 🎬 Live Demo
+## 🎬 Demo
 
 <video src="https://github.com/user-attachments/assets/bedcba01-bcc2-4ed7-93c7-be373b916a6a" controls width="100%"></video>
 
@@ -14,7 +14,7 @@ Welcome to [CueCoLab](http://cuecolab.com), a platform designed to streamline co
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Live Demo](#-live-demo)
+- [Demo](#-demo)
 - [Problems Faced by Content Creators](#problems-faced-by-content-creators)
 - [Solutions Provided by CueCoLab](#solutions-provided-by-cuecolab)
 - [Benefits of Using CueCoLab](#benefits-of-using-cuecolab)
