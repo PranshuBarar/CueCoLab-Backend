@@ -6,7 +6,7 @@ Welcome to [CueCoLab](http://cuecolab.com), a platform designed to streamline co
 
 ## 🎬 Live Demo
 
-<video src="https://github.com/PranshuBarar/CueCoLab-Frontend/releases/download/v1.0/cuecolab-demo.mp4" controls width="100%"></video>
+<video src="https://github.com/user-attachments/assets/bedcba01-bcc2-4ed7-93c7-be373b916a6a" controls width="100%"></video>
 
 ![Screenshot from 2024-06-12 18-10-17](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/33a42d74-9df0-4399-b280-8d760b36fbd0)
 ![CueCoLab Interface](https://github.com/PranshuBarar/CueCoLab-Frontend/assets/117909106/e5843a8d-ad69-419e-9e89-16fed44195c3)
